@@ -1,0 +1,35 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+	<tr>
+		<th>タイトル</th>
+		<td><%= @task.title %></td>
+	</tr>
+	<tr>
+		<th>開始日</th>
+		<td><%= @task.start_date.to_s(:datetime_ymd_jp) %></td>
+	</tr>
+	<tr>
+		<th>投稿日時</th>
+		<td><%= @task.created_at.to_s(:datetime_jp) %></td>
+	</tr>
+	<tr>
+		<th>終日</th>
+		<td>
+		<% if @task.fulltime == "1" %>
+              ○
+            <% else %>
+            <% end %></td>
+	</tr>
+	<tr>
+		<th>スケジュールメモ</th>
+		<td><%= @task.memo %></td>
+	</tr>
+</table>
+
+<div>
+	<ul>
+		<li><%= link_to "編集する", :edit_task %></li>
+		<li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
+	</ul>
+</div>
